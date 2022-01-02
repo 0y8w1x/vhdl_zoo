@@ -1,7 +1,0 @@
-v 4
-file . "fifo_register.vhd" "e33aa21f42a00566bd531ffbaa46d025d0f24f10" "20211230173312.743":
-  entity fifo_register at 1( 0) + 0 on 47;
-  architecture arch of fifo_register at 23( 558) + 0 on 48;
-file . "fifo_register_tb.vhd" "d3ccff25e5c7b5d28d19cc43a2d16a0e547dd726" "20211230173310.055":
-  entity fifo_register_tb at 1( 0) + 0 on 45;
-  architecture testbench of fifo_register_tb at 8( 120) + 0 on 46;
