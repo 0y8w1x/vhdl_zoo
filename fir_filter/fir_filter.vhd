@@ -27,7 +27,7 @@ entity fir_filter is
     port(
         -- input
         i_clk: in std_logic;
-        i_rst_n: in std_logic;
+        i_rst: in std_logic;
         i_data_sample: in std_logic_vector(data_width-1 downto 0);
         i_filter_coefficients: in coefficient_array;
         -- output
@@ -40,10 +40,10 @@ architecture arch of fir_filter is
     signal r_data_array: data_array;
     signal w_products: product_array;   
 begin
-    process(i_clk, i_rst_n)
+    process(i_clk, i_rst)
         variable sum: signed(filtered_data_width - 1 downto 0);
     begin
-        if (i_rst_n = '0') then
+        if (i_rst = '1') then
             r_data_array <= (others => (others => '0'));
             r_coefficients <= (others => (others => '0'));
             o_filtered_data_sample <= (others => '0');

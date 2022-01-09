@@ -7,7 +7,7 @@ end fir_filter_tb;
 
 architecture testbench of fir_filter_tb is
     signal r_clk: std_logic := '0';
-    signal r_rst_n: std_logic := '1';
+    signal r_rst: std_logic := '0';
     -- for testing purposes this is -3 
     signal r_data_sample: std_logic_vector(data_width-1 downto 0) := "1101";
     -- for testing purposes this is [7, 2, 1, 3]
@@ -19,7 +19,7 @@ architecture testbench of fir_filter_tb is
         port(
             -- input
             i_clk: in std_logic;
-            i_rst_n: in std_logic;
+            i_rst: in std_logic;
             i_data_sample: in std_logic_vector(data_width-1 downto 0);
             i_filter_coefficients: in coefficient_array;
             -- output
@@ -31,7 +31,7 @@ begin
     UUT: fir_filter
         port map(
             i_clk => r_clk,
-            i_rst_n => r_rst_n,
+            i_rst => r_rst,
             i_data_sample => r_data_sample,
             i_filter_coefficients => r_coefficients,
             o_filtered_data_sample => w_filtered_data_sample
